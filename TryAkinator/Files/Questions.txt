@@ -1,0 +1,32 @@
+Su personaje es de MARVEL?;q,2;q,8;q,14;q,20;q,26
+Su personaje es hombre o de genero masculino?;q,3;q,4;q,5;q,6;q,7
+Su personaje es un heroe o es bueno?;a,1;a,1;a,2;a,3;a,3
+Su personaje es un heroe o es bueno?;a,1;a,1;a,2;a,3;a,3
+Su personaje tiene genero?;a,4;a,4;a,1;a,5;a,5
+Su personaje es una mujer o de genero femenino?;a,4;a,4;a,5;a,5;a,5
+Su personaje es una mujer o de genero femenino?;a,4;a,4;a,5;a,5;a,5
+Su personaje es hombre o de genero masculino?;q,9;q,10;q,11;q,12;q,13
+Su personaje es un heroe o es bueno?;a,1;a,1;a,2;a,3;a,3
+Su personaje es un heroe o es bueno?;a,1;a,1;a,2;a,3;a,3
+Su personaje tiene genero?;a,4;a,4;a,1;a,5;a,5
+Su personaje es una mujer o de genero femenino?;a,4;a,4;a,5;a,5;a,5
+Su personaje es una mujer o de genero femenino?;a,4;a,4;a,5;a,5;a,5
+Su personaje es de DC Comics?;q,15;q,16;q,17;q,18;q,19
+Su personaje es un hombre o de genero masculino?;a,6;a,6;a,7;a,8;a,8
+Su personaje es un hombre o de genero masculino?;a,6;a,6;a,7;a,8;a,8
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de DC Comics?;q,21;q,22;q,23;q,24;q,25
+Su personaje es un hombre o de genero masculino?;a,6;a,6;a,7;a,8;a,8
+Su personaje es un hombre o de genero masculino?;a,6;a,6;a,7;a,8;a,8
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de DC Comics?;q,27;q,28;q,29;q,30;q,31
+Su personaje es un hombre o de genero masculino?;a,6;a,6;a,7;a,8;a,8
+Su personaje es un hombre o de genero masculino?;a,6;a,6;a,7;a,8;a,8
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+Su personaje es de Dark Horse Comics?;a,9;a,9;a,1;a,10;a,10
+null;null;null;null;null;null
