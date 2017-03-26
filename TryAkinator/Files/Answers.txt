@@ -1,10 +1,10 @@
-Su personaje es Thor?;null;null;null;null;null
-Su personaje es Deadpool;;null;null;null;null;null
-Su personaje es Loki?;null;null;null;null;null
-Su personaje es Black Widow?;null;null;null;null;null
-Su personaje es Vision?;null;null;null;null;null
-Su personaje es Super Man?;null;null;null;null;null
-Su personaje es Doctor Fate?;null;null;null;null;null
-Su personaje es Wonder Woman?;null;null;null;null;null
-Su personaje es Luke Skywalker?;null;null;null;null;null
-Su personaje es Kick Ass?;null;null;null;null;null
+Estaba pensando en Thor?;null;null;null;null;null
+Estaba pensando en Deadpool;;null;null;null;null;null
+Estaba pensando en Loki?;null;null;null;null;null
+Estaba pensando en Black Widow?;null;null;null;null;null
+Estaba pensando en Vision?;null;null;null;null;null
+Estaba pensando en Super Man?;null;null;null;null;null
+Estaba pensando en Doctor Fate?;null;null;null;null;null
+Estaba pensando en Wonder Woman?;null;null;null;null;null
+Estaba pensando en Luke Skywalker?;null;null;null;null;null
+Estaba pensando en Kick Ass?;null;null;null;null;null

@@ -22,21 +22,26 @@ import javax.swing.Timer;
  */
 public class Game extends javax.swing.JFrame{
 
+    private boolean winner, looser;
     private int score, nigma, count;
     private InfoNode player, ptr;
     private DualNode actual, root;
     private javax.swing.Timer timer;
-    private javax.swing.JLabel time, nQuestion;
-    private javax.swing.JTextArea question;
-    private javax.swing.JButton yes, no, maybeYes, maybeNo, dunno;
+    private javax.swing.JLabel time, nQuestion, respuesta, pregunta;
+    private javax.swing.JTextArea question, decide;
+    private javax.swing.JButton yes, no, maybeYes, maybeNo, dunno, scores,
+            playermn, exit, ok;
+    private javax.swing.JTextField respuestaText, preguntaText;
+    private javax.swing.JCheckBox a, b, c, d, e;
     
     public Game(DualNode root) {
 
         this.root = root;
         this.actual = root;
         this.nigma = 1;
-        
-        setSize(315, 355);
+        this.winner = false;
+        this.looser = false;
+        setSize(315, 405);
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null);
@@ -52,10 +57,6 @@ public class Game extends javax.swing.JFrame{
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 count++;
                 System.out.println("Seconds: " +count);
-////                Date date = new Date(count *1000);
-//                DateFormat df = new SimpleDateFormat("HH:mm:ss");
-//                String t = df.format(date);
-//                time.setText("Tiempo: " +timeToFormat(Integer.toString((count *1000))));
                 time.setText("Tiempo: " +secondsToTime(count));
             }
         });
@@ -76,18 +77,6 @@ public class Game extends javax.swing.JFrame{
         yes.setVisible(true);
         add(yes);
         
-        no = new javax.swing.JButton();
-        no.setText("No");
-        no.addActionListener(new java.awt.event.ActionListener(){
-            public void actionPerformed(java.awt.event.ActionEvent evt){
-                NoActionPerformed(evt);
-            }
-        });
-        no.setSize(140, 30);
-        no.setLocation(85, 170);
-        no.setVisible(true);
-        add(no);
-        
         maybeYes = new javax.swing.JButton();
         maybeYes.setText("Probablemente si");
         maybeYes.addActionListener(new java.awt.event.ActionListener(){
@@ -96,9 +85,21 @@ public class Game extends javax.swing.JFrame{
             }
         });
         maybeYes.setSize(140, 30);
-        maybeYes.setLocation(85, 220);
+        maybeYes.setLocation(85, 170);
         maybeYes.setVisible(true);
         add(maybeYes);
+        
+        dunno = new javax.swing.JButton();
+        dunno.setText("No lo se");
+        dunno.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                DunnoActionPerformed(evt);
+            }
+        });
+        dunno.setSize(140, 30);
+        dunno.setLocation(85, 220);
+        dunno.setVisible(true);
+        add(dunno);
         
         maybeNo = new javax.swing.JButton();
         maybeNo.setText("Probablemente no");
@@ -112,6 +113,19 @@ public class Game extends javax.swing.JFrame{
         maybeNo.setVisible(true);
         add(maybeNo);
         
+        no = new javax.swing.JButton();
+        no.setText("No");
+        no.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                NoActionPerformed(evt);
+            }
+        });
+        no.setSize(140, 30);
+        no.setLocation(85, 320);
+        no.setVisible(true);
+        add(no);
+
+        // LABELS
         time = new javax.swing.JLabel();
         nQuestion = new javax.swing.JLabel();
         question = new javax.swing.JTextArea();
@@ -138,44 +152,240 @@ public class Game extends javax.swing.JFrame{
         add(time);
         add(nQuestion);
         add(question);
+        
+        // FINAL GUI
+        
+        scores = new javax.swing.JButton();
+        scores.setText("Puntajes");
+        scores.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                ScoresActionPerformed(evt);
+            }
+        });
+        scores.setSize(140, 30);
+        scores.setLocation(85, 220);
+        scores.setVisible(true);
+        
+        playermn = new javax.swing.JButton();
+        playermn.setText("Menu jugador");
+        playermn.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                PlayerActionPerformed(evt);
+            }
+        });
+        playermn.setSize(140, 30);
+        playermn.setLocation(85, 270);
+        playermn.setVisible(true);
+        
+        exit = new javax.swing.JButton();
+        exit.setText("Salir");
+        exit.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                ExitActionPerformed(evt);
+            }
+        });
+        exit.setSize(140, 30);
+        exit.setLocation(85, 320);
+        exit.setVisible(true);
+        
+        // Learning GUI
+        respuesta = new javax.swing.JLabel();
+        pregunta = new javax.swing.JLabel();
+        decide = new javax.swing.JTextArea();
+        respuesta.setSize(80, 20);
+        pregunta.setSize(80, 20);
+        decide.setSize(200, 40);
+        respuesta.setLocation(360, 60);
+        pregunta.setLocation(360, 100);
+        decide.setLocation(360, 140);
+        respuesta.setForeground(Color.white);
+        respuesta.setBackground(Color.black);
+        pregunta.setForeground(Color.white);
+        pregunta.setBackground(Color.black);
+        decide.setForeground(Color.white);
+        decide.setBackground(Color.black);
+        respuesta.setFont(new Font("Arial",Font.BOLD, 12));
+        pregunta.setFont(new Font("Arial",Font.BOLD, 12));
+        decide.setFont(new Font("Arial",Font.BOLD, 12));
+        respuesta.setText("Respuesta:");
+        pregunta.setText("Pregunta:");
+        decide.setText("Que responderia para llegar a su respuesta?:");
+        decide.setEditable(false);
+        decide.setLineWrap(true);
+        decide.setWrapStyleWord(true);
+        
+        preguntaText = new javax.swing.JTextField();
+        respuestaText = new javax.swing.JTextField();
+        preguntaText.setText("");
+        respuestaText.setText("");
+        preguntaText.setSize(120, 20);
+        respuestaText.setSize(120, 20);
+        respuestaText.setLocation(450, 60);
+        preguntaText.setLocation(450, 100);
+        
+        a = new javax.swing.JCheckBox("Si");
+        b = new javax.swing.JCheckBox("Probablemente si");
+        c = new javax.swing.JCheckBox("No lo sé");
+        d = new javax.swing.JCheckBox("Probablemente no");
+        e = new javax.swing.JCheckBox("No");
+        a.setForeground(Color.white);
+        b.setForeground(Color.white);
+        c.setForeground(Color.white);
+        d.setForeground(Color.white);
+        e.setForeground(Color.white);
+        a.setBackground(Color.black);
+        b.setBackground(Color.black);
+        c.setBackground(Color.black);
+        d.setBackground(Color.black);
+        e.setBackground(Color.black);
+        a.setSize(140, 20);
+        b.setSize(140, 20);
+        c.setSize(140, 20);
+        d.setSize(140, 20);
+        e.setSize(140, 20);
+        a.setLocation(370, 180);
+        b.setLocation(370, 200);
+        c.setLocation(370, 220);
+        d.setLocation(370, 240);
+        e.setLocation(370, 260);
+        
+        ok = new javax.swing.JButton();
+        ok.setText("Ok");
+        exit.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                OkActionPerformed(evt);
+            }
+        });
+        ok.setSize(140, 30);
+        ok.setLocation(395, 320);
+        ok.setVisible(true);
+    }
+    
+    public void updateGUI(){
+        setSize(315, 405);
+        setLocationRelativeTo(null);
+        remove(maybeNo);
+        remove(maybeYes);
+        remove(dunno);
+        no.setLocation(85, 170);
+        add(scores);
+        add(playermn);
+        add(exit);
+    }
+    
+    public void learnGUI(){
+        setSize(625, 405); 
+        setLocationRelativeTo(null);
+        add(respuesta);
+        add(pregunta);
+        add(decide);
+        add(respuestaText);
+        add(preguntaText);
+        add(a);
+        add(b);
+        add(c);
+        add(d);
+        add(e);
+        add(ok);
     }
     
     public void updateInfo(){
         nQuestion.setText("Pregunta #" +nigma +":" );
         question.setText(actual.text);
+        if (nigma > 15) {
+            timer.stop();
+        }
+        if (winner) {
+            question.setText("Al menos adivine esa!");
+        }
+        if (looser) {
+            question.setText("No pude adivinar, ahora tienes que enseñarme");
+        }
     }
     
     public void YesActionPerformed(java.awt.event.ActionEvent e){
-        
-        if (actual.yes != null) {
-            actual = actual.yes;
-            nigma++;
+        if(actual != null){
+            if (actual.yes != null) {
+                actual = actual.yes;
+                nigma++;
+            }else{
+                timer.stop();
+                winner = true;
+                updateGUI();
+            }
         }
         updateInfo();
     }
     
     public void NoActionPerformed(java.awt.event.ActionEvent e){
-        if (actual.no != null) {
-            actual = actual.no;
-            nigma++;
+        if(actual != null){
+            if (actual.no != null) {
+                actual = actual.no;
+                nigma++;
+            }else{
+                timer.stop();
+                looser = true;
+                learnGUI();
+            }
+        }
+        updateInfo();
+    }
+    
+    public void DunnoActionPerformed(java.awt.event.ActionEvent e){
+        if(actual != null){
+            if (actual.dunno != null) {
+                actual = actual.dunno;
+                nigma++;
+            }else{
+
+            }
         }
         updateInfo();
     }
     
     public void MaybeYesActionPerformed(java.awt.event.ActionEvent e){
-        if (actual.maybe != null) {
-            actual = actual.maybe;
-            nigma++;
+        if(actual != null){
+            if(actual != null){
+                if (actual.maybe != null) {
+                    actual = actual.maybe;
+                    nigma++;
+                }else{
+
+                }
+            }
         }
         updateInfo();
     }
     
     public void MaybeNoActionPerformed(java.awt.event.ActionEvent e){
-        if (actual.maybeNot != null) {
-            actual = actual.maybeNot;
-            nigma++;
+        if(actual != null){
+            if (actual.maybeNot != null) {
+                actual = actual.maybeNot;
+                nigma++;
+            }else{
+
+            }
         }
         updateInfo();
+    }
+    
+    public void ScoresActionPerformed(java.awt.event.ActionEvent e){
+        
+    }
+    
+    public void PlayerActionPerformed(java.awt.event.ActionEvent e){
+        
+    }
+    
+    public void ExitActionPerformed(java.awt.event.ActionEvent e){
+        
+    }
+    
+    public void OkActionPerformed(java.awt.event.ActionEvent e){
+        /*
+            HAY QUE HACER QUE APRENDA 
+        */
+        
     }
 
     public String secondsToTime(int t){
