@@ -74,7 +74,7 @@ public class InfoNode {
     public boolean verifyIfUserPasswordIsCorrect(String j, String p){
         boolean sw = true, c = false;
         InfoNode q = this;
-        while(q.link == null && sw){
+        while(q != null && sw){
             if (q.username.equals(j)) {
                 if (q.password.equals(p)) {
                     c = true;

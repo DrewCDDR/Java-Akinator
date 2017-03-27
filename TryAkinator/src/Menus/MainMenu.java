@@ -33,7 +33,6 @@ public class MainMenu extends javax.swing.JFrame{
         initUI();
         initData();
         setVisible(true);
-        System.out.println("Current time: " + (System.currentTimeMillis()/100));
     }
     
     public void initUI(){
@@ -103,11 +102,7 @@ public class MainMenu extends javax.swing.JFrame{
         
         while (p != null) {    
             c++;
-            System.out.println("he entrado: " +c +" veces...");
             text = p.text;
-            System.out.println("P: " +p.text +"\n\tYes: " +p.yes +"\n\tMaybe: " 
-                    +p.maybe +"\n\tDunno: " +p.dunno +"\n\tMaybe Not: " +p.maybeNot
-                    +"\n\tNo: " +p.no);
             SimpleNode T = new SimpleNode(true);
             root.fillWithT(T, text);
             if (T.findsAnUnvisitedNode(text)) {
@@ -142,9 +137,7 @@ public class MainMenu extends javax.swing.JFrame{
                     no = new DualNode(aPTR.getMeNodeNumber(indexOfNo).text);
                 }
                 T.findSonlessNode(text).setSons(yes, maybe, dunno, maybeNot, no);
-//                root.find(text).setSons(yes, maybe, dunno, maybeNot, no);
                 p = p.link;
-                System.out.println("--------P has entered to the tree--------");
             }else{
                 p = p.link;
             }

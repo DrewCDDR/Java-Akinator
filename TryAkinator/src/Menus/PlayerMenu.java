@@ -172,7 +172,7 @@ public class PlayerMenu extends javax.swing.JFrame {
     }
     
     public void PlayActionPerformed(java.awt.event.ActionEvent evt){
-        Game g = new Game(root);
+        Game g = new Game(this.root);
 //        player.timesPlayed = Integer.toString(Integer.parseInt(player.timesPlayed) +1);
         g.setPlayer(player);
         g.setPtr(ptr);

@@ -210,11 +210,11 @@ public class LoginFrame extends javax.swing.JFrame{
                 PlayerMenu plm = new PlayerMenu();
                 plm.setPlayer(player);
                 plm.setPtr(ptr);
+                plm.setRoot(root);
                 this.dispose();
             }
         }
         setErrors(s);
-//                System.out.println("Username: " +"." +textUser.getText() +".");
     }
     
     private void BackActionPerformed(java.awt.event.ActionEvent evt){ 

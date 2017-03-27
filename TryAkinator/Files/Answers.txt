@@ -1,4 +1,6 @@
+Estaba pensando en Dr Strange?;null;null;null;null;null
 Estaba pensando en Iron Man?;null;null;null;null;null
+Estaba pensando en Hulk?;null;null;null;null;null
 Estaba pensando en Capitan America?;null;null;null;null;null
 Estaba pensando en Thor?;null;null;null;null;null
 Estaba pensando en Wolverine?;null;null;null;null;null
@@ -11,3 +13,6 @@ Estaba pensando en Doctor Fate?;null;null;null;null;null
 Estaba pensando en Wonder Woman?;null;null;null;null;null
 Estaba pensando en Luke Skywalker?;null;null;null;null;null
 Estaba pensando en Kick Ass?;null;null;null;null;null
+Estaba pensando en Batman?;null;null;null;null;null
+Estaba pensando en Joker?;null;null;null;null;null
+Estaba pensando en Lobo?;null;null;null;null;null

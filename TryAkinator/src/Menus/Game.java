@@ -60,7 +60,6 @@ public class Game extends javax.swing.JFrame{
             @Override
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 count++;
-                System.out.println("Seconds: " +count);
                 time.setText("Tiempo: " +secondsToTime(count));
             }
         });
@@ -411,11 +410,18 @@ public class Game extends javax.swing.JFrame{
     }
     
     public void ScoresActionPerformed(java.awt.event.ActionEvent evt){
-        
+        saveTxts();
+        ScoreFrame sf = new ScoreFrame(2, ptr);
+        dispose();
     }
     
     public void PlayerActionPerformed(java.awt.event.ActionEvent evt){
-        
+        saveTxts();
+        PlayerMenu pm = new PlayerMenu();
+        pm.setRoot(root);
+        pm.setPtr(ptr);
+        pm.setPlayer(player);
+        dispose();
     }
     
     public void ExitActionPerformed(java.awt.event.ActionEvent evt){
@@ -440,7 +446,6 @@ public class Game extends javax.swing.JFrame{
             }
             if (a.isSelected()) {
                 a1 = new DualNode(t1);
-//                System.out.println("RLLY?");
             }else{
                 a1 = new DualNode(actual.text);
             }
@@ -490,8 +495,6 @@ public class Game extends javax.swing.JFrame{
         root.treeToList(qPTR, aPTR);
         qPTR.questionsToString(aPTR);
         aPTR.answersToString();
-        qPTR.prinTreeNodeInfo();
-        qPTR.printInfo();
         ques.save_QnA(qPTR);
         ans.save_QnA(aPTR);
         playe.savePlayers(ptr);

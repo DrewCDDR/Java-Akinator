@@ -80,9 +80,6 @@ public class SimpleNode {
     public boolean findsAnUnvisitedNode(String t){
         SimpleNode p = this;
         boolean sw = true;
-        if (t.endsWith("Su personaje es un heroe o es bueno?")) {
-            int z = 2;
-        }
         while (p != null && sw){
             if(!p.ptr){
                 if (p.treeNode.text.equals(t)) {
