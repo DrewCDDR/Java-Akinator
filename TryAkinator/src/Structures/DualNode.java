@@ -102,10 +102,8 @@ public class DualNode {
     
     public void fillWithT(SimpleNode T, String text){
         DualNode actual = this;
-        if (text.equals("Su personaje es de DC Comics?")) {
-            if(actual.text.equals("Su personaje es de DC Comics?")){
-                int a = 2;
-            }
+        if (text.equals("Su personaje es un heroe o es bueno?")) {
+           int z = 2 ;
         }
         if (actual != null) {
             if (actual.text.equals(text)) {
@@ -123,6 +121,30 @@ public class DualNode {
                 actual.maybeNot.fillWithT(T, text);
             if(actual.no != null)
                 actual.no.fillWithT(T, text);
+        }
+    }
+    
+    public void treeToList(SimpleNode qPTR, SimpleNode aPTR){
+        DualNode actual = this;
+        if (actual != null) {
+            SimpleNode p = new SimpleNode(actual);
+            if (actual.yes != null) {
+                qPTR.add(p);
+            }else{
+                if (!aPTR.hasText(actual.text)) {
+                    aPTR.add(p);
+                }
+            } 
+            if(actual.yes != null)
+                actual.yes.treeToList(qPTR, aPTR);
+            if(actual.maybe != null)
+                actual.maybe.treeToList(qPTR, aPTR);
+            if(actual.dunno != null)
+                actual.dunno.treeToList(qPTR, aPTR);
+            if(actual.maybeNot != null)
+                actual.maybeNot.treeToList(qPTR, aPTR);
+            if(actual.no != null)
+                actual.no.treeToList(qPTR, aPTR);
         }
     }
     //TREE FUNCTIONS Ends=======================================================

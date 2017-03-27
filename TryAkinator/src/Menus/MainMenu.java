@@ -79,8 +79,8 @@ public class MainMenu extends javax.swing.JFrame{
         questionsReader = new ReWi(2); 
         answersReader = new ReWi(3);
         pPTR = playerReader.ReadPlayers();
-        qPTR = questionsReader.Read_QnA();
-        aPTR = answersReader.Read_QnA();
+        qPTR = questionsReader.read_QnA();
+        aPTR = answersReader.read_QnA();
         initTree();
     }
     

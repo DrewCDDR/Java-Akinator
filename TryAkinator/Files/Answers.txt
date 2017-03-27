@@ -1,5 +1,8 @@
+Estaba pensando en Iron Man?;null;null;null;null;null
+Estaba pensando en Capitan America?;null;null;null;null;null
 Estaba pensando en Thor?;null;null;null;null;null
-Estaba pensando en Deadpool;;null;null;null;null;null
+Estaba pensando en Wolverine?;null;null;null;null;null
+Estaba pensando en Deadpool;null;null;null;null;null
 Estaba pensando en Loki?;null;null;null;null;null
 Estaba pensando en Black Widow?;null;null;null;null;null
 Estaba pensando en Vision?;null;null;null;null;null

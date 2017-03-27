@@ -7,13 +7,12 @@ package Menus;
 
 import Structures.DualNode;
 import Structures.InfoNode;
+import Structures.SimpleNode;
+import Util.ReWi;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.swing.Timer;
 
 /**
@@ -24,8 +23,9 @@ public class Game extends javax.swing.JFrame{
 
     private boolean winner, looser;
     private int score, nigma, count;
+    private ReWi ques,ans, playe;
     private InfoNode player, ptr;
-    private DualNode actual, root;
+    private DualNode actual, root, possible, a1, b1, c1, d1, e1;
     private javax.swing.Timer timer;
     private javax.swing.JLabel time, nQuestion, respuesta, pregunta;
     private javax.swing.JTextArea question, decide;
@@ -35,12 +35,16 @@ public class Game extends javax.swing.JFrame{
     private javax.swing.JCheckBox a, b, c, d, e;
     
     public Game(DualNode root) {
-
+        
         this.root = root;
         this.actual = root;
         this.nigma = 1;
         this.winner = false;
         this.looser = false;
+        this.playe = new ReWi(1);
+        this.ques = new ReWi(2);
+        this.ans = new ReWi(3);
+        
         setSize(315, 405);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -251,7 +255,7 @@ public class Game extends javax.swing.JFrame{
         
         ok = new javax.swing.JButton();
         ok.setText("Ok");
-        exit.addActionListener(new java.awt.event.ActionListener(){
+        ok.addActionListener(new java.awt.event.ActionListener(){
             public void actionPerformed(java.awt.event.ActionEvent evt){
                 OkActionPerformed(evt);
             }
@@ -276,6 +280,7 @@ public class Game extends javax.swing.JFrame{
     public void learnGUI(){
         setSize(625, 405); 
         setLocationRelativeTo(null);
+        add(ok);
         add(respuesta);
         add(pregunta);
         add(decide);
@@ -286,7 +291,7 @@ public class Game extends javax.swing.JFrame{
         add(c);
         add(d);
         add(e);
-        add(ok);
+
     }
     
     public void updateInfo(){
@@ -296,58 +301,76 @@ public class Game extends javax.swing.JFrame{
             timer.stop();
         }
         if (winner) {
-            question.setText("Al menos adivine esa!");
+            question.setText("Al menos adivine esa!\nSu puntaje es: 0");
         }
         if (looser) {
-            question.setText("No pude adivinar, ahora tienes que enseñarme");
+            score = nigma;
+            question.setText("No pude adivinar, ahora tienes que enseñarme. Su puntaje es: " +score);
         }
     }
     
-    public void YesActionPerformed(java.awt.event.ActionEvent e){
-        if(actual != null){
-            if (actual.yes != null) {
-                actual = actual.yes;
-                nigma++;
-            }else{
-                timer.stop();
-                winner = true;
-                updateGUI();
-            }
+    public void savePlayerInfo(){
+        if (winner) {
+            score = 0;
+        }else if(looser){
+            score = nigma;
+        } 
+        float total;
+        total = Integer.parseInt(player.timesPlayed) * Float.parseFloat(player.averageScore);
+        total = total +score;
+        player.timesPlayed = Integer.toString(Integer.parseInt(player.timesPlayed) +1);
+        total = total/Integer.parseInt(player.timesPlayed);
+        player.averageScore = Float.toString(total);
+        if (score > Integer.parseInt(player.highScore)) {
+            player.highScore = Integer.toString(score);
         }
-        updateInfo();
+        player.time = Integer.toString(Integer.parseInt(player.time) +count);
+        player.numberOfQuestions = Integer.toString(Integer.parseInt(player.numberOfQuestions) +nigma);
+        
     }
     
-    public void NoActionPerformed(java.awt.event.ActionEvent e){
-        if(actual != null){
-            if (actual.no != null) {
-                actual = actual.no;
-                nigma++;
-            }else{
-                timer.stop();
-                looser = true;
-                learnGUI();
-            }
-        }
-        updateInfo();
-    }
-    
-    public void DunnoActionPerformed(java.awt.event.ActionEvent e){
-        if(actual != null){
-            if (actual.dunno != null) {
-                actual = actual.dunno;
-                nigma++;
-            }else{
-
-            }
-        }
-        updateInfo();
-    }
-    
-    public void MaybeYesActionPerformed(java.awt.event.ActionEvent e){
-        if(actual != null){
+    public void YesActionPerformed(java.awt.event.ActionEvent evt){
+        if(!winner && !looser)
             if(actual != null){
-                if (actual.maybe != null) {
-                    actual = actual.maybe;
+                if (actual.yes != null) {
+                    actual = actual.yes;
+                    nigma++;
+                }else{
+                    timer.stop();
+                    if (nigma > 15) {
+                        looser = true;
+                    }else{
+                        winner = true;
+                    }
+                    savePlayerInfo();
+                    updateGUI();
+                }
+            }
+        updateInfo();
+    }
+    
+    public void NoActionPerformed(java.awt.event.ActionEvent evt){
+        if(!winner && !looser){
+            if(actual != null){
+                if (actual.no != null) {
+                    actual = actual.no;
+                    nigma++;
+                }else{
+                    timer.stop();
+                    looser = true;
+                    savePlayerInfo();
+                    learnGUI();
+                }
+            }
+        }
+        updateInfo();
+    }
+    
+    public void DunnoActionPerformed(java.awt.event.ActionEvent evt){
+        if(!winner && !looser){
+            if(actual != null){
+                if (actual.dunno != null) {
+                    actual = actual.dunno;
                     nigma++;
                 }else{
 
@@ -357,37 +380,123 @@ public class Game extends javax.swing.JFrame{
         updateInfo();
     }
     
-    public void MaybeNoActionPerformed(java.awt.event.ActionEvent e){
-        if(actual != null){
-            if (actual.maybeNot != null) {
-                actual = actual.maybeNot;
-                nigma++;
-            }else{
+    public void MaybeYesActionPerformed(java.awt.event.ActionEvent evt){
+        if(!winner && !looser){
+            if(actual != null){
+                if(actual != null){
+                    if (actual.maybe != null) {
+                        actual = actual.maybe;
+                        nigma++;
+                    }else{
 
+                    }
+                }
             }
         }
         updateInfo();
     }
     
-    public void ScoresActionPerformed(java.awt.event.ActionEvent e){
+    public void MaybeNoActionPerformed(java.awt.event.ActionEvent evt){
+        if(!winner && !looser){
+            if(actual != null){
+                if (actual.maybeNot != null) {
+                    actual = actual.maybeNot;
+                    nigma++;
+                }else{
+
+                }
+            }
+        }
+        updateInfo();
+    }
+    
+    public void ScoresActionPerformed(java.awt.event.ActionEvent evt){
         
     }
     
-    public void PlayerActionPerformed(java.awt.event.ActionEvent e){
+    public void PlayerActionPerformed(java.awt.event.ActionEvent evt){
         
     }
     
-    public void ExitActionPerformed(java.awt.event.ActionEvent e){
-        
+    public void ExitActionPerformed(java.awt.event.ActionEvent evt){
+        saveTxts();
+        this.dispose();
     }
     
-    public void OkActionPerformed(java.awt.event.ActionEvent e){
+    public void OkActionPerformed(java.awt.event.ActionEvent evt){
         /*
             HAY QUE HACER QUE APRENDA 
         */
+        String t1, t2;
+        t1 = respuestaText.getText();
+        t2 = preguntaText.getText();
+        if (!"".equals(t1) && !"".equals(t2)) {
+            t1 = "Estaba pensando en " +t1 +"?";
+            if (!t2.contains("?")) {
+                t2 = t2 +"?";
+            }
+            if (!t2.contains("Su personaje")) {
+                t2 = "Su personaje " + t2.toLowerCase();
+            }
+            if (a.isSelected()) {
+                a1 = new DualNode(t1);
+//                System.out.println("RLLY?");
+            }else{
+                a1 = new DualNode(actual.text);
+            }
+            if (b.isSelected()) {
+                b1 = new DualNode(t1);
+            }else{
+                b1 = new DualNode(actual.text);
+            }
+            if (c.isSelected()) {
+                c1 = new DualNode(t1);
+            }else{
+                c1 = new DualNode(actual.text);
+            }
+            if (d.isSelected()) {
+                d1 = new DualNode(t1);
+            }else{
+                d1 = new DualNode(actual.text);
+            }
+            if (e.isSelected()) {
+                e1 = new DualNode(t1);
+            }else{
+                e1 = new DualNode(actual.text);
+            }
+            actual.text = t2;
+            actual.setSons(a1, b1, c1, d1, e1);
+//            remove(ok);
+            remove(respuesta);
+            remove(pregunta);
+            remove(decide);
+            remove(respuestaText);
+            remove(preguntaText);
+            remove(a);
+            remove(b);
+            remove(c);
+            remove(d);
+            remove(e);
+            updateGUI();
+        }
+        
         
     }
 
+    
+    public void saveTxts(){
+        SimpleNode qPTR = new SimpleNode(true);
+        SimpleNode aPTR = new SimpleNode(true);
+        root.treeToList(qPTR, aPTR);
+        qPTR.questionsToString(aPTR);
+        aPTR.answersToString();
+        qPTR.prinTreeNodeInfo();
+        qPTR.printInfo();
+        ques.save_QnA(qPTR);
+        ans.save_QnA(aPTR);
+        playe.savePlayers(ptr);
+    }
+    
     public String secondsToTime(int t){
         String date = "";
         int s = t;

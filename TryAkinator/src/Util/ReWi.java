@@ -1,9 +1,11 @@
 package Util;
 
-import Structures.DualNode;
 import Structures.InfoNode;
+import Structures.SimpleNode;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ReWi {
@@ -27,7 +29,7 @@ public class ReWi {
     
     
     //PENDING
-    public InfoNode Read_QnA(){
+    public InfoNode read_QnA(){
         InfoNode ptr;
         String line;
         try{
@@ -77,7 +79,62 @@ public class ReWi {
     
     
     
-    public void WritePlayers(String s){
+    public void savePlayers(InfoNode ptr){
+        InfoNode p = ptr;
+        FileWriter fw = null;
+        try{
+            fw = new FileWriter(f);
+            while(p != null){
+                if (p.link != null) {
+                        fw.append(p.username +";" +p.password +";" +p.highScore +";"
+                        +p.numberOfQuestions +";" +p.time +";" +p.timesPlayed 
+                        +";" +p.averageScore+"\n");
+                    }else{
+                        fw.append(p.username +";" +p.password +";" +p.highScore +";"
+                        +p.numberOfQuestions +";" +p.time +";" +p.timesPlayed 
+                        +";" +p.averageScore);
+                    }
+                p = p.link;
+            }
+        }catch(IOException e){
+            System.err.println(e.getMessage());
+        }finally{
+            if (fw != null) {
+                try{
+                    fw.close();
+                }catch(IOException e){
+                    System.err.println(e.getMessage());
+                }
+            }
+        }
+    }
+    
+    public void save_QnA (SimpleNode ptr){
+        SimpleNode p = ptr;
+        FileWriter fw = null;
+        try{
+            fw = new FileWriter(f);
+            while(p != null){
+                if(!p.ptr){
+                    if (p.link != null) {
+                        fw.append(p.text +"\n");
+                    }else{
+                        fw.append(p.text);
+                    }
+                }
+                    p = p.link;
+            }
+        }catch(IOException e){
+            System.err.println(e.getMessage());
+        }finally{
+            if (fw != null) {
+                try{
+                    fw.close();
+                }catch(IOException e){
+                    System.err.println(e.getMessage());
+                }
+            }
+        }
         
     }
 }
