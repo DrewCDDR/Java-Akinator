@@ -6,9 +6,9 @@
 package Menus;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -16,10 +16,14 @@ import java.awt.image.BufferedImage;
  */
 public class HelpFrame extends javax.swing.JFrame{
 
-    private javax.swing.JLabel aiuda;
+    public int s, i;
+//    private 
+    ImageIcon icon;
+    private javax.swing.JLabel output;
     private javax.swing.JButton next, back;
+    
     public HelpFrame() {
-        setSize(415, 405);
+        setSize(475, 425);
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(null);
@@ -33,6 +37,7 @@ public class HelpFrame extends javax.swing.JFrame{
     }
     
     public void init(){
+        i = 1;
         next = new javax.swing.JButton();
         next.setText("Next");
         next.addActionListener(new java.awt.event.ActionListener(){
@@ -41,7 +46,7 @@ public class HelpFrame extends javax.swing.JFrame{
             }
         });
         next.setSize(70, 30);
-        next.setLocation(330, 340);
+        next.setLocation(390, 360);
         next.setVisible(true);
         this.add(next);
         
@@ -53,25 +58,38 @@ public class HelpFrame extends javax.swing.JFrame{
             }
         });
         back.setSize(70, 30);
-        back.setLocation(10, 340);
+        back.setLocation(10, 360);
         back.setVisible(true);
         this.add(back);
         
-        /*aiuda = new javax.swing.JLabel();
-        aiuda.setSize(200, 300);
-        aiuda.setFont(new Font("Arial", Font.BOLD, 16));
-        aiuda.setForeground(Color.white);
-        aiuda.setBackground(Color.black);
-        aiuda.setLocation(100, 25);
-        aiuda.setText("User Manual: click \"next\"");
-        this.add(aiuda);
-        */
+        output = new javax.swing.JLabel();
+        output.setLocation(10,10);
+        output.setSize(450, 350);
+        icon = new ImageIcon("Images/Guia 0" +i +".png");
+        
+        output.setIcon(icon);
+        this.add(output);
+        
     }
     
     public void BackActionPerformed(java.awt.event.ActionEvent e){
-        
+        if (i > 1) {
+            i--;
+        }
+        icon = new ImageIcon("Images/Guia 0" +i +".png");
+        Image image = icon.getImage();
+        Image newimg = image.getScaledInstance(450, 340,  java.awt.Image.SCALE_SMOOTH);
+        icon = new ImageIcon(newimg);
+        output.setIcon(icon);
     }
     public void NextActionPerformed(java.awt.event.ActionEvent e){
-        
+        if (i < 8) {
+            i++;
+        }
+        icon = new ImageIcon("Images/Guia 0" +i +".png");
+        Image image = icon.getImage();
+        Image newimg = image.getScaledInstance(450, 340,  java.awt.Image.SCALE_SMOOTH);
+        icon = new ImageIcon(newimg);
+        output.setIcon(icon);
     }
 }

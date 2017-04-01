@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import javax.swing.table.DefaultTableModel;
 
 public class ReWi {
     public File f ;
@@ -136,5 +137,21 @@ public class ReWi {
             }
         }
         
+    }
+    
+    public DefaultTableModel fill(javax.swing.JTable score){
+        DefaultTableModel model = (DefaultTableModel) score.getModel();
+        model.addRow(new String[] {"Usuario", "Puntaje"});
+        try{
+            Scanner s = new Scanner(f);
+            while(s.hasNextLine()){
+                String line = s.nextLine();
+                model.addRow(new String[] {line.split(";")[0], line.split(";")[2]});
+            }
+        }catch(FileNotFoundException e){
+            
+        }finally{
+            return model;
+        }
     }
 }

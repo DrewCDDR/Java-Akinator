@@ -1,18 +1,48 @@
 Estaba pensando en Dr Strange?;null;null;null;null;null
 Estaba pensando en Iron Man?;null;null;null;null;null
 Estaba pensando en Hulk?;null;null;null;null;null
+Estaba pensando en Mister Fantastico?;null;null;null;null;null
+Estaba pensando en Ant Man?;null;null;null;null;null
+Estaba pensando en Beast?;null;null;null;null;null
+Estaba pensando en Professor X?;null;null;null;null;null
+Estaba pensando en Spider-Man?;null;null;null;null;null
+Estaba pensando en Doctor Strange?;null;null;null;null;null
 Estaba pensando en Capitan America?;null;null;null;null;null
-Estaba pensando en Thor?;null;null;null;null;null
 Estaba pensando en Wolverine?;null;null;null;null;null
+Estaba pensando en Colossus?;null;null;null;null;null
+Estaba pensando en Iceman?;null;null;null;null;null
+Estaba pensando en Cyclops ?;null;null;null;null;null
+Estaba pensando en Gambit?;null;null;null;null;null
+Estaba pensando en Night Crawler?;null;null;null;null;null
+Estaba pensando en Thunder Bird?;null;null;null;null;null
+Estaba pensando en Bishop?;null;null;null;null;null
+Estaba pensando en Quick Silver?;null;null;null;null;null
+Estaba pensando en Iron Fist?;null;null;null;null;null
+Estaba pensando en Black Bolt?;null;null;null;null;null
+Estaba pensando en Black Panther?;null;null;null;null;null
+Estaba pensando en Hawk Eye?;null;null;null;null;null
+Estaba pensando en Thor?;null;null;null;null;null
 Estaba pensando en Deadpool;null;null;null;null;null
 Estaba pensando en Loki?;null;null;null;null;null
+Estaba pensando en Namor?;null;null;null;null;null
+Estaba pensando en Cable?;null;null;null;null;null
+Estaba pensando en Dare Devil?;null;null;null;null;null
 Estaba pensando en Black Widow?;null;null;null;null;null
 Estaba pensando en Vision?;null;null;null;null;null
+Estaba pensando en Scarlett Witch?;null;null;null;null;null
+Estaba pensando en Jessica Jones?;null;null;null;null;null
 Estaba pensando en Super Man?;null;null;null;null;null
 Estaba pensando en Doctor Fate?;null;null;null;null;null
 Estaba pensando en Wonder Woman?;null;null;null;null;null
 Estaba pensando en Luke Skywalker?;null;null;null;null;null
 Estaba pensando en Kick Ass?;null;null;null;null;null
+Estaba pensando en Aquaman?;null;null;null;null;null
 Estaba pensando en Batman?;null;null;null;null;null
+Estaba pensando en Green Lantern?;null;null;null;null;null
+Estaba pensando en Dr. Manhattan?;null;null;null;null;null
 Estaba pensando en Joker?;null;null;null;null;null
+Estaba pensando en Vendetta?;null;null;null;null;null
+Estaba pensando en Martianman Hunter?;null;null;null;null;null
 Estaba pensando en Lobo?;null;null;null;null;null
+Estaba pensando en Han Solo?;null;null;null;null;null
+Estaba pensando en Thrall?;null;null;null;null;null

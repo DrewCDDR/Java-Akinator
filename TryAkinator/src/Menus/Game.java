@@ -22,6 +22,7 @@ import javax.swing.Timer;
 public class Game extends javax.swing.JFrame{
 
     private boolean winner, looser;
+    public int s;
     private int score, nigma, count;
     private ReWi ques,ans, playe;
     private InfoNode player, ptr;
@@ -134,7 +135,7 @@ public class Game extends javax.swing.JFrame{
         question = new javax.swing.JTextArea();
         time.setSize(100, 20);
         nQuestion.setSize(120, 20);
-        question.setSize(240, 40);
+        question.setSize(240, 50);
         time.setLocation(195, 20);
         nQuestion.setLocation(20, 20);
         question.setLocation(40, 60);
@@ -306,6 +307,7 @@ public class Game extends javax.swing.JFrame{
             score = nigma;
             question.setText("No pude adivinar, ahora tienes que enseñarme. Su puntaje es: " +score);
         }
+        
     }
     
     public void savePlayerInfo(){
@@ -412,11 +414,14 @@ public class Game extends javax.swing.JFrame{
     public void ScoresActionPerformed(java.awt.event.ActionEvent evt){
         saveTxts();
         ScoreFrame sf = new ScoreFrame(2, ptr);
+        sf.setPlayer(player);
+        sf.setRoot(root);
         dispose();
     }
     
     public void PlayerActionPerformed(java.awt.event.ActionEvent evt){
         saveTxts();
+
         PlayerMenu pm = new PlayerMenu();
         pm.setRoot(root);
         pm.setPtr(ptr);
@@ -492,6 +497,7 @@ public class Game extends javax.swing.JFrame{
     public void saveTxts(){
         SimpleNode qPTR = new SimpleNode(true);
         SimpleNode aPTR = new SimpleNode(true);
+        ptr.organizeByHighscore();
         root.treeToList(qPTR, aPTR);
         qPTR.questionsToString(aPTR);
         aPTR.answersToString();
@@ -557,6 +563,4 @@ public class Game extends javax.swing.JFrame{
     public void setRoot(DualNode root) {
         this.root = root;
     }
-    
-    
 }

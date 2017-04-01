@@ -158,4 +158,13 @@ public class DualNode {
         this.maybeNot = maybeNot;
         this.no = no;
     }
+    
+    public boolean isleave(){
+        DualNode root = this;
+        if (root.yes == null && root.maybe == null && root.dunno == null
+                && root.maybeNot == null && root.no == null) {
+            return true;
+        }
+        return false;
+    }
 }

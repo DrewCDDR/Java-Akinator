@@ -2,28 +2,33 @@ package Menus;
 
 import Structures.DualNode;
 import Structures.InfoNode;
+import Util.ReWi;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.JFrame;
 
 public class LoginFrame extends javax.swing.JFrame{
 
     private boolean uclick = true, pclick = true; 
-    private int s = 0;
+    private int e = 0;
+    private ReWi rw;
     private InfoNode ptr;
     private DualNode root;
     private javax.swing.JButton ok;
     private javax.swing.JButton back;
     private javax.swing.JLabel labelUser;
     private javax.swing.JLabel labelPass;
-    private javax.swing.JLabel labelErrors;
+    private javax.swing.JTextArea areaErrors;
     private javax.swing.JTextField textUser;
     private javax.swing.JPasswordField textPass;
     
     public LoginFrame() { // SE CONSTRUYE EL FRAME
+        rw = new ReWi(1);
         setSize(415, 405);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -77,12 +82,16 @@ public class LoginFrame extends javax.swing.JFrame{
         this.add(labelUser);
         this.add(labelPass);
         
-        labelErrors = new javax.swing.JLabel();
-        labelErrors.setLocation(100, 160);
-        labelErrors.setSize(230, 20);
-        labelErrors.setForeground(Color.red);
-        labelErrors.setVisible(true);
-        this.add(labelErrors);
+        areaErrors = new javax.swing.JTextArea();
+        areaErrors.setLocation(90, 160);
+        areaErrors.setSize(230, 40);
+        areaErrors.setEditable(false);
+        areaErrors.setBackground(Color.black);
+        areaErrors.setForeground(Color.red);
+        areaErrors.setLineWrap(true);
+        areaErrors.setWrapStyleWord(true);
+        areaErrors.setVisible(true);
+        this.add(areaErrors);
         
         textUser = new javax.swing.JTextField();
         textPass = new javax.swing.JPasswordField();
@@ -133,63 +142,80 @@ public class LoginFrame extends javax.swing.JFrame{
     public void setErrors(int n){
         switch(n){
             case 0:
-                labelErrors.setText("");
+                areaErrors.setText("");
             case 1:
-                labelErrors.setText("No se escribio el usuario");
+                areaErrors.setText("No se escribio en el campo el usuario");
                 break;
             case 2:
-                labelErrors.setText("No se escribio la contraseña");
+                areaErrors.setText("No se escribio en el campo de la contraseña");
                 break;
             case 3:
-                labelErrors.setText("No se escribio en ningun campo");
+                areaErrors.setText("No se escribio en ningun campo");
                 break;
             case 4:
-                labelErrors.setText("Cliquee el campo del usuario");
+                areaErrors.setText("Cliquee el campo del usuario");
                 break;
             case 5:
-                labelErrors.setText("Cliquee el campo de la contraseña");
+                areaErrors.setText("Cliquee el campo de la contraseña");
                 break;
             case 6:
-                labelErrors.setText("Cliquee ambos campos");
+                areaErrors.setText("Cliquee ambos campos");
                 break;
             case 7:
-                labelErrors.setText("Contraseña incorrecta");
+                areaErrors.setText("La contraseña ingresada es incorrecta");
                 break;
-                
+            case  8:
+                areaErrors.setText("Su usuario no puede tener más de 7 caracteres");
+                break;
+            case  9:
+                areaErrors.setText("Su usuario no puede tener caracteres especiales!");
+                break;
         }
     }
     
     private void OkActionPerformed(java.awt.event.ActionEvent evt){
         InfoNode player;
-        s = 0;
+        e = 0;
         String password = TransforCharsIntoString(textPass.getPassword());
         String username = textUser.getText();
-        labelErrors.setText("");
+        int l = username.length();
+        areaErrors.setText("");
+        Pattern p = Pattern.compile("[^a-zA-Z0-9 ]", Pattern.CASE_INSENSITIVE);
+        Matcher m = p.matcher(username);
+        boolean b = m.find();
         if ((username.equals(""))) {
-            s = 1;
+            e = 1;
         }
         
         if ((password.equals(""))) {
-            if(s == 1){
-                s = 3;
-            }else if(s == 0){
-                s = 2;
+            if(e == 1){
+                e = 3;
+            }else if(e == 0){
+                e = 2;
             }
         }
         
         if (username.equals("Type your username")) {
-            s = 4;
+            e = 4;
         }
         
         if (password.equals("Type your password")) {
-            if (s == 4) {
-                s = 6;
-            }else if (s == 0){
-                s = 5;
+            if (e == 4) {
+                e = 6;
+            }else if (e == 0){
+                e = 5;
             }
         }
         
-        if (s == 0) {
+        if (username.length() > 7) {
+            e = 8;
+        }
+        
+        if (b) {
+            e = 9;
+        }
+        
+        if (e == 0) {
             if (ptr.verifyIfUsernameExists(username)) {
                 if (ptr.verifyIfUserPasswordIsCorrect(username, password)) {
                     int n = ptr.getMeTheIndexOf(username);
@@ -200,13 +226,15 @@ public class LoginFrame extends javax.swing.JFrame{
                     plm.setRoot(root);
                     this.dispose();
                 }else{
-                    s = 7;
+                    e = 7;
                 }
             }else{
                 InfoNode z = new InfoNode(username, password, "0", "0", "0",
                         "0", "0");
                 player = z;
                 ptr.add(z);
+                ptr.organizeByHighscore();
+                rw.savePlayers(ptr);
                 PlayerMenu plm = new PlayerMenu();
                 plm.setPlayer(player);
                 plm.setPtr(ptr);
@@ -214,7 +242,7 @@ public class LoginFrame extends javax.swing.JFrame{
                 this.dispose();
             }
         }
-        setErrors(s);
+        setErrors(e);
     }
     
     private void BackActionPerformed(java.awt.event.ActionEvent evt){ 

@@ -188,12 +188,14 @@ public class PlayerMenu extends javax.swing.JFrame {
     public void LogOutActionPerformed(java.awt.event.ActionEvent evt){
         LoginFrame lf = new LoginFrame();
         lf.setPtr(ptr);
+        lf.setRoot(root);
         this.dispose();
     }
     
     public void ExitActionPerformed(java.awt.event.ActionEvent evt){
         MainMenu mn = new MainMenu();
         mn.setP_PTR(ptr);
+        mn.setRoot(root);
         this.dispose();
     }
     
@@ -227,6 +229,4 @@ public class PlayerMenu extends javax.swing.JFrame {
     public void setRoot(DualNode root) {
         this.root = root;
     }
-    
-    
 }

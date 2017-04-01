@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JFrame;
 
 public class MainMenu extends javax.swing.JFrame{
-
+    
     private javax.swing.JButton logIn;
     private javax.swing.JButton help;
     private javax.swing.JButton scores;

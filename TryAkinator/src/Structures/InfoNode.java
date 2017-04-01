@@ -195,4 +195,27 @@ public class InfoNode {
         }
         return n;
     }
+    
+    public void organizeByHighscore(){
+        InfoNode p = this;
+        InfoNode antP = null, q;
+        while (p != null) {            
+            q = p.link;
+            while(q != null){
+                if (Integer.parseInt(q.highScore) > Integer.parseInt(p.highScore)){
+                    if (antP == null) {
+                        p.link = q.link;
+                        q.link = p;
+                    }else{
+                        p.link = q.link;
+                        antP.link = q;
+                        q.link = p;
+                    }
+                }
+                q = q.link;
+            }
+            antP = p;
+            p = p.link;
+        }
+    }
 }
