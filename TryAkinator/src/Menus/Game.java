@@ -305,7 +305,11 @@ public class Game extends javax.swing.JFrame{
         }
         if (looser) {
             score = nigma;
-            question.setText("No pude adivinar, ahora tienes que enseñarme. Su puntaje es: " +score);
+            if (nigma > 15) {
+               question.setText("No adivine en menos de 15 preguntas...\nPUNTAJE: " +score);
+            }else{
+                question.setText("No pude adivinar, ahora tienes que enseñarme. Su puntaje es: " +score);
+            } 
         }
         
     }
@@ -331,7 +335,7 @@ public class Game extends javax.swing.JFrame{
     }
     
     public void YesActionPerformed(java.awt.event.ActionEvent evt){
-        if(!winner && !looser)
+        if(!winner && !looser){
             if(actual != null){
                 if (actual.yes != null) {
                     actual = actual.yes;
@@ -347,6 +351,7 @@ public class Game extends javax.swing.JFrame{
                     updateGUI();
                 }
             }
+        }
         updateInfo();
     }
     

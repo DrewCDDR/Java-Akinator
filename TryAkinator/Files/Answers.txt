@@ -17,16 +17,24 @@ Estaba pensando en Night Crawler?;null;null;null;null;null
 Estaba pensando en Thunder Bird?;null;null;null;null;null
 Estaba pensando en Bishop?;null;null;null;null;null
 Estaba pensando en Quick Silver?;null;null;null;null;null
+Estaba pensando en Human Torch?;null;null;null;null;null
+Estaba pensando en Thing?;null;null;null;null;null
 Estaba pensando en Iron Fist?;null;null;null;null;null
 Estaba pensando en Black Bolt?;null;null;null;null;null
 Estaba pensando en Black Panther?;null;null;null;null;null
 Estaba pensando en Hawk Eye?;null;null;null;null;null
+Estaba pensando en Star-Lord?;null;null;null;null;null
+Estaba pensando en Falcon?;null;null;null;null;null
+Estaba pensando en Kick Ass?;null;null;null;null;null
+Estaba pensando en Big Daddy?;null;null;null;null;null
 Estaba pensando en Thor?;null;null;null;null;null
+Estaba pensando en Rocket Raccoon?;null;null;null;null;null
 Estaba pensando en Deadpool;null;null;null;null;null
 Estaba pensando en Loki?;null;null;null;null;null
 Estaba pensando en Namor?;null;null;null;null;null
 Estaba pensando en Cable?;null;null;null;null;null
 Estaba pensando en Dare Devil?;null;null;null;null;null
+Estaba pensando en Venom?;null;null;null;null;null
 Estaba pensando en Black Widow?;null;null;null;null;null
 Estaba pensando en Vision?;null;null;null;null;null
 Estaba pensando en Scarlett Witch?;null;null;null;null;null
@@ -35,7 +43,6 @@ Estaba pensando en Super Man?;null;null;null;null;null
 Estaba pensando en Doctor Fate?;null;null;null;null;null
 Estaba pensando en Wonder Woman?;null;null;null;null;null
 Estaba pensando en Luke Skywalker?;null;null;null;null;null
-Estaba pensando en Kick Ass?;null;null;null;null;null
 Estaba pensando en Aquaman?;null;null;null;null;null
 Estaba pensando en Batman?;null;null;null;null;null
 Estaba pensando en Green Lantern?;null;null;null;null;null
@@ -46,3 +53,13 @@ Estaba pensando en Martianman Hunter?;null;null;null;null;null
 Estaba pensando en Lobo?;null;null;null;null;null
 Estaba pensando en Han Solo?;null;null;null;null;null
 Estaba pensando en Thrall?;null;null;null;null;null
+Estaba pensando en Leonardo?;null;null;null;null;null
+Estaba pensando en Goku ?;null;null;null;null;null
+Estaba pensando en Naruto?;null;null;null;null;null
+Estaba pensando en Sasuke?;null;null;null;null;null
+Estaba pensando en Minato Namikaze?;null;null;null;null;null
+Estaba pensando en Hashirama Senju?;null;null;null;null;null
+Estaba pensando en Tobirama Senju?;null;null;null;null;null
+Estaba pensando en Hiruzen Sarutobi?;null;null;null;null;null
+Estaba pensando en Jiraya?;null;null;null;null;null
+Estaba pensando en Kurosaki Ichigo?;null;null;null;null;null

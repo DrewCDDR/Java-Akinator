@@ -1,7 +1,7 @@
-Su personaje es de MARVEL?;q,2;q,38;q,44;q,50;q,56
-Su personaje es hombre o de genero masculino?;q,3;q,32;q,33;q,34;q,35
-Su personaje es un heroe o es bueno?;q,4;a,24;a,25;a,26;q,28
-Su personaje es humano?;q,5;a,2;a,24;a,24;q,27
+Su personaje es de MARVEL?;q,2;q,47;q,53;q,59;q,65
+Su personaje es hombre o de genero masculino?;q,3;q,41;q,42;q,43;q,44
+Su personaje es un heroe o es bueno?;q,4;a,30;a,32;a,33;q,35
+Su personaje es humano?;q,5;a,2;a,30;a,30;q,33
 Su personaje es un super genio?;q,6;q,13;a,10;a,10;q,14
 Su personaje usa magia o la manipula de alguna forma?;a,1;a,1;a,2;a,2;q,7
 Su personaje puede cambiar su masa corporal? (volumen, forma o estructura);q,8;a,3;a,2;a,2;q,11
@@ -11,8 +11,8 @@ Su personaje es mutante?;a,6;a,6;a,4;a,4;a,4
 Su personaje tiene súper poderes?;q,12;a,8;a,2;a,2;a,2
 Su personaje es mutante?;a,7;a,7;a,8;a,8;a,8
 Su personaje usa o puede manipular magia?;a,9;a,9;a,2;a,2;a,2
-Su personaje es un mutante?;q,15;a,19;a,10;a,10;q,23
-Su personaje es de los x - men?;q,16;a,11;a,19;a,19;a,19
+Su personaje es un mutante?;q,15;a,19;a,10;a,10;q,25
+Su personaje es de los x - men?;q,16;a,11;a,19;a,19;q,23
 Su personaje fue usado como rata de laboratorio?;a,11;a,11;a,11;a,12;q,17
 Su personaje cambia su masa corporal? (volumen, forma o estructura);q,18;a,12;a,12;a,14;q,19
 Su personaje manipula el hielo?;a,13;a,13;a,12;a,12;a,12
@@ -20,53 +20,73 @@ Su personaje usa un arma?;a,15;a,15;a,14;a,14;q,20
 Su personaje se teletransporta?;a,16;a,16;a,14;a,14;q,21
 Su personaje tiene entrenamiento militar?;a,17;a,17;a,14;a,14;q,22
 Su personaje manipula la energia?;a,18;a,18;a,14;a,14;a,14
-Su personaje manipula o controla el chi?;a,20;a,20;a,10;a,10;q,24
-Su personaje es un rey?;q,25;a,22;a,10;a,10;q,26
-Su personaje es un inhumano?;a,21;a,21;a,22;a,22;a,22
-Su personaje es un superhumano?;a,10;a,10;a,10;a,23;a,23
-Su personaje es mutante?;a,11;a,11;a,24;a,24;a,24
-Su personaje es un antiheroe?;q,29;a,25;a,26;a,26;a,26
-Su personaje es mutante?;q,30;a,25;a,29;a,29;a,29
-Su personaje es atlanteano? (nacido o proveniente de atlantis);a,27;a,27;a,25;a,25;q,31
-Su personaje es un cyborg o tiene partes roboticas?;a,28;a,28;a,25;a,25;a,25
-Su personaje es un heroe o es bueno?;a,24;a,24;a,25;a,26;a,26
-Su personaje tiene genero?;a,30;a,30;a,24;a,31;a,31
-Su personaje es una mujer o de genero femenino?;a,30;a,30;a,31;a,31;a,31
-Su personaje es una mujer o de genero femenino?;q,36;a,30;a,31;a,31;a,31
-Su personaje es una villana o hace el mal?;a,32;a,32;a,30;a,30;q,37
-Su personaje tiene poderes?;a,33;a,33;a,30;a,30;a,30
-Su personaje es hombre o de genero masculino?;q,39;q,40;q,41;q,42;q,43
-Su personaje es un heroe o es bueno?;a,24;a,24;a,25;a,26;a,26
-Su personaje es un heroe o es bueno?;a,24;a,24;a,25;a,26;a,26
-Su personaje tiene genero?;a,30;a,30;a,24;a,31;a,31
-Su personaje es una mujer o de genero femenino?;a,30;a,30;a,31;a,31;a,31
-Su personaje es una mujer o de genero femenino?;a,30;a,30;a,31;a,31;a,31
-Su personaje es de DC Comics?;q,45;q,46;q,47;q,48;q,49
-Su personaje es un hombre o de genero masculino?;a,34;a,34;a,35;a,36;a,36
-Su personaje es un hombre o de genero masculino?;a,34;a,34;a,35;a,36;a,36
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de DC Comics?;q,51;q,52;q,53;q,54;q,55
-Su personaje es un hombre o de genero masculino?;a,34;a,34;a,35;a,36;a,36
-Su personaje es un hombre o de genero masculino?;a,34;a,34;a,35;a,36;a,36
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de DC Comics?;q,57;q,67;q,68;q,69;q,70
-Su personaje es un hombre o de genero masculino?;q,58;a,34;a,35;a,36;a,36
-Su personaje es humano?;q,59;q,64;a,34;a,34;q,65
-Su personaje es un heroe o hace el bien?;q,60;a,40;q,62;a,43;q,63
-Su personaje vive o nacio en el agua?;a,39;a,39;a,40;a,40;q,61
-Su personaje tiene súper poderes?;a,41;a,41;a,40;a,40;a,40
-Su personaje su personaje es una mutación?;a,42;a,40;a,40;a,40;a,40
-Su personaje es un antiheroe?;a,44;a,44;a,43;a,43;a,43
-Su personaje es energia pura?;a,42;a,40;a,40;a,40;a,40
-Su personaje es un heroe o hace el bien?;q,66;a,34;a,46;a,46;a,46
-Su personaje es un marciano?;a,45;a,45;a,34;a,34;a,34
-Su personaje es un hombre o de genero masculino?;a,34;a,34;a,35;a,36;a,36
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de Dark Horse Comics?;a,37;a,37;a,24;a,38;a,38
-Su personaje es de Dark Horse Comics?;q,71;a,37;a,24;a,38;q,72
-Su personaje maneja el halcon milenario?;a,47;a,47;a,37;a,37;a,37
-Su personaje es de blizzard?;a,48;a,48;a,38;a,38;a,38
+Su personaje es de los 4 fantasticos?;q,24;a,21;a,19;a,19;a,19
+Su personaje manipula el fuego?;a,20;a,20;a,21;a,21;a,21
+Su personaje manipula o controla el chi?;a,22;a,22;a,10;a,10;q,26
+Su personaje es un rey?;q,27;a,24;a,10;a,10;q,28
+Su personaje es un inhumano?;a,23;a,23;a,24;a,24;a,24
+Su personaje es un superhumano?;a,10;a,10;a,10;a,25;q,29
+Su personaje hace parte de los guardianes de la galaxia?;a,26;a,26;a,25;a,25;q,30
+Su personaje es negro o de piel morena?;a,27;a,27;a,25;a,25;q,31
+Su personaje es de los Avengers?;a,25;a,25;a,25;a,28;q,32
+Su personaje es un adolescente?;a,28;a,28;a,28;a,29;a,29
+Su personaje es mutante?;a,11;a,11;a,30;a,30;q,34
+Su personaje es un animal?;a,31;a,31;a,30;a,30;a,30
+Su personaje es un antiheroe?;q,36;a,32;a,33;a,33;q,39
+Su personaje es mutante?;q,37;a,32;a,36;a,36;a,36
+Su personaje es atlanteano? (nacido o proveniente de atlantis);a,34;a,34;a,32;a,32;q,38
+Su personaje es un cyborg o tiene partes roboticas?;a,35;a,35;a,32;a,32;a,32
+Su personaje es un villano o hace el mal?;q,40;a,37;a,33;a,33;a,33
+Su personaje es un Dios?;a,33;a,33;a,37;a,37;a,37
+Su personaje es un heroe o es bueno?;a,30;a,30;a,32;a,33;a,33
+Su personaje tiene genero?;a,38;a,38;a,30;a,39;a,39
+Su personaje es una mujer o de genero femenino?;a,38;a,38;a,39;a,39;a,39
+Su personaje es una mujer o de genero femenino?;q,45;a,38;a,39;a,39;a,39
+Su personaje es una villana o hace el mal?;a,40;a,40;a,38;a,38;q,46
+Su personaje tiene poderes?;a,41;a,41;a,38;a,38;a,38
+Su personaje es hombre o de genero masculino?;q,48;q,49;q,50;q,51;q,52
+Su personaje es un heroe o es bueno?;a,30;a,30;a,32;a,33;a,33
+Su personaje es un heroe o es bueno?;a,30;a,30;a,32;a,33;a,33
+Su personaje tiene genero?;a,38;a,38;a,30;a,39;a,39
+Su personaje es una mujer o de genero femenino?;a,38;a,38;a,39;a,39;a,39
+Su personaje es una mujer o de genero femenino?;a,38;a,38;a,39;a,39;a,39
+Su personaje es de DC Comics?;q,54;q,55;q,56;q,57;q,58
+Su personaje es un hombre o de genero masculino?;a,42;a,42;a,43;a,44;a,44
+Su personaje es un hombre o de genero masculino?;a,42;a,42;a,43;a,44;a,44
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de DC Comics?;q,60;q,61;q,62;q,63;q,64
+Su personaje es un hombre o de genero masculino?;a,42;a,42;a,43;a,44;a,44
+Su personaje es un hombre o de genero masculino?;a,42;a,42;a,43;a,44;a,44
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de DC Comics?;q,66;q,76;q,77;q,78;q,79
+Su personaje es un hombre o de genero masculino?;q,67;a,42;a,43;a,44;a,44
+Su personaje es humano?;q,68;q,73;a,42;a,42;q,74
+Su personaje es un heroe o hace el bien?;q,69;a,47;q,71;a,50;q,72
+Su personaje vive o nacio en el agua?;a,46;a,46;a,47;a,47;q,70
+Su personaje tiene súper poderes?;a,48;a,48;a,47;a,47;a,47
+Su personaje su personaje es una mutación?;a,49;a,47;a,47;a,47;a,47
+Su personaje es un antiheroe?;a,51;a,51;a,50;a,50;a,50
+Su personaje es energia pura?;a,49;a,47;a,47;a,47;a,47
+Su personaje es un heroe o hace el bien?;q,75;a,42;a,53;a,53;a,53
+Su personaje es un marciano?;a,52;a,52;a,42;a,42;a,42
+Su personaje es un hombre o de genero masculino?;a,42;a,42;a,43;a,44;a,44
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de Dark Horse Comics?;a,45;a,45;a,30;a,28;a,28
+Su personaje es de Dark Horse Comics?;q,80;a,45;a,30;a,28;q,81
+Su personaje maneja el halcon milenario?;a,54;a,54;a,45;a,45;a,45
+Su personaje es de Blizzard?;a,55;a,55;a,28;a,28;q,82
+Su personaje es de Mirage Comics?;a,56;a,56;a,28;a,28;q,83
+Su personaje hace parte del mundo del Comic?;a,28;a,28;a,57;a,57;q,84
+Su personaje hace parte del mundo del Manga?;q,85;a,58;a,57;a,57;a,57
+Su personaje pertenece al mundo de Dragon Ball?;a,57;a,57;a,58;a,58;q,86
+Su personaje hace parte del mundo de Naruto?;q,87;a,58;a,58;a,65;a,65
+Su personaje pertenece al clan Uchija?;a,59;a,59;a,58;a,58;q,88
+Su personaje fue, es o ha sido Hokage?;q,89;a,58;a,64;a,64;a,64
+Su personaje creo el rasengan?;a,60;a,60;a,58;a,58;q,90
+Su personaje fue el mejor amigo de Madara Uchija?;a,61;a,61;a,58;a,58;q,91
+Su personaje es el hermano menor del primer Hokage?;a,62;a,62;a,58;a,58;q,92
+Su personaje fue el maestro de Orochimaru?;a,63;a,63;a,58;a,58;a,58
