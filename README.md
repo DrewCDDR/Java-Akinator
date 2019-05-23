@@ -1,2 +1,2 @@
 # Java-Akinator
-University proyect
+University project
